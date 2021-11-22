@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>config_android</key>
+        <value>
+            {
+            "adsProb": {
+            "banner": 1,
+            "native": 1,
+            "interstitial": 1,
+            "adpress": 0,
+            "count": 3,
+            "intervalAdsInter": 120000
+            },
+            "ga": {
+            "android": "UA-62602489-14",
+            "ios": "UA-62602489-12",
+            "wp": "UA-47792030-8"
+            },
+            "adsid": {
+            "android": {
+            "banner": "ca-app-pub-2105662342842313/4473545367",
+            "interstitial": "ca-app-pub-2105662342842313/8941567122",
+            "reward": "ca-app-pub-2105662342842313/1884744075",
+            "native": "ca-app-pub-3940256099942544/2247696110"
+            }
+            }
+            }
+        </value>
+    </entry>
+</defaultsMap>

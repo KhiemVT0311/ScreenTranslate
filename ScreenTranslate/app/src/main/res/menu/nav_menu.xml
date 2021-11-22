@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/screen_trans"
+        android:title="@string/screen_trans"
+        android:icon="@drawable/ic_screen_trans" />
+
+    <item
+        android:id="@+id/translate"
+        android:title="@string/translate_cap"
+        android:icon="@drawable/ic_translate" />
+
+    <item
+        android:id="@+id/conversation"
+        android:title="@string/conversation"
+        android:icon="@drawable/ic_conversation" />
+
+    <item
+        android:id="@+id/more"
+        android:title="@string/more"
+        android:icon="@drawable/ic_more" />
+
+</menu>

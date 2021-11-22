@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="layout_alignParentBottom" format="boolean" />
+    <!-- If true, centers this child horizontally and vertically within its parent. -->
+    <declare-styleable name="FuriganaView">
+        <attr name="android:text" />
+        <attr name="android:maxLines" />
+        <attr name="android:textAlignment" />
+        <attr name="android:lineSpacingExtra" />
+        <attr name="android:layout_marginEnd" />
+        <attr name="android:layout_marginLeft" />
+        <attr name="android:layout_marginRight" />
+        <attr name="android:layout_marginStart" />
+        <attr name="furiganaSize" format="dimension" />
+        <attr name="romajiSize" format="dimension" />
+        <attr name="romajiColor" format="color" />
+        <attr name="lineSpacingWithTextNormal" format="dimension" />
+        <attr name="wordSpacing" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FontSize">
+        <attr name="textAppearance10" format="reference" />
+        <attr name="textAppearance11" format="reference" />
+        <attr name="textAppearance12" format="reference" />
+        <attr name="textAppearance13" format="reference" />
+        <attr name="textAppearance14" format="reference" />
+        <attr name="textAppearance15" format="reference" />
+        <attr name="textAppearance16" format="reference" />
+        <attr name="textAppearance17" format="reference" />
+        <attr name="textAppearance18" format="reference" />
+        <attr name="textAppearance19" format="reference" />
+        <attr name="textAppearance20" format="reference" />
+        <attr name="textAppearance21" format="reference" />
+        <attr name="textAppearance22" format="reference" />
+        <attr name="textAppearance24" format="reference" />
+        <attr name="textAppearance40" format="reference" />
+        <attr name="textAppearance100" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightScrollView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+</resources>

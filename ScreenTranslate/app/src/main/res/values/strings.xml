@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Screen Trans</string>
+    <string name="screen_translator">Screen Translator</string>
+    <string name="sample_text">Sample</string>
+    <string name="hint_input_text">Type your text here</string>
+    <string name="vietnamese" translatable="false">VietNamese</string>
+
+    <string name="no_text_detected">No text detected</string>
+    <string name="channel_notification_screen_translator_id" translatable="false">channel_notification_screen_translator_id</string>
+    <string name="description_noitification_screen_translator" translatable="false">JTranslate_Screen_Translator_Service</string>
+    <string name="screen_translator_on">Screen Translator is on</string>
+    <string name="screen_shot">Screenshot</string>
+    <string name="shut_down">Shutdown</string>
+    <string name="open_app">Open app</string>
+    <string name="network_unconnected">Network is not connected</string>
+    <string name="no_internet">There is no connection. Please connect to the internet to continue!</string>
+    <string name="something_went_wrong">Something went wrong, please try again later!</string>
+
+    <string name="translating">Translating...</string>
+
+    <string name="screen_trans">Screen Trans</string>
+    <string name="translate_cap">Translate</string>
+    <string name="translate">Translate</string>
+    <string name="chat">Chat</string>
+    <string name="premium">Premium</string>
+    <string name="more">More</string>
+    <string name="projectID">Screen Translate</string>
+
+    <string name="error_audio">Audio recording error</string>
+    <string name="error_client">Other client side errors</string>
+    <string name="error_insufficient_permissions">Insufficient permissions</string>
+    <string name="network_timeout">Network operation timed out</string>
+    <string name="fast_translator">Fast Translator</string>
+    <string name="copy_successful">Successfully copied</string>
+    <string name="history">Histories</string>
+    <string name="example">Examples</string>
+    <string name="definition">Definitions</string>
+    <string name="conversation">Conversation</string>
+    <string name="synonym_of">Synonym of %s</string>
+    <string name="alter_definition">Alter definitions</string>
+    <string name="no_support_text_to_speech">Your device does not support offline reading. Please connect to the internet and try again!</string>
+    <string name="no_support_lang_code">Language not supported</string>
+    <string name="title_download_offline_translate">Translate even offline by downloading the translation file offline.</string>
+
+    <string name="download_data_success">Download data successfully</string>
+    <string name="downloading_data">Loading…</string>
+    <string name="download_translation_desc">Do you want to download this translation language pack for offline translation?</string>
+    <string name="download_translation_title">Download offline translation language pack %s</string>
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+    <string name="download_audio_failed">Download audio failed :(</string>
+    <string name="import_data">Importing data…</string>
+    <string name="message_tip_click_screen_trans">Click on the icon to switch to the translation area selection mode</string>
+    <string name="copy_done">Copied!</string>
+    <string name="message_screen_trans_enable">The screen translator is being turned on</string>
+    <string name="default_screen_trans_channel_id" translatable="false">default_screen_trans_channel_id</string>
+    <string name="bullet_symbol" translatable="false">\u2022</string>
+    <string name="recording">Recording</string>
+    <string name="stop">Stop</string>
+    <string name="loading">Loading</string>
+    <string name="no_text">The system does not understand what you say?</string>
+    <string name="select_language">Language</string>
+    <string name="general_settings">General Settings</string>
+    <string name="text_terms_of_service">Terms of Service</string>
+    <string name="text_privacy_policy">Privacy policy</string>
+    <string name="text_contact_us">Contact us</string>
+    <string name="text_auto_text_to_speech">Auto text to speech</string>
+    <string name="system_busy">System is busy. Please try later</string>
+    <string name="feedback_screen_translate">Feedback ScreenTrans Android</string>
+    <string name="user_feedback">User feedback</string>
+    <string name="error_feed_back">Error! Can not send feedback</string>
+    <string name="action_share">Share</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
+    <string name="detail">Detail</string>
+
+    <string name="japan" translatable="false">日本語</string>
+    <string name="vietnam" translatable="false">Việt Nam</string>
+    <string name="english" translatable="false">English</string>
+    <string name="japanese" translatable="false">Japanese</string>
+
+    <string name="error_no_internet_connect_continue">No network connection. \nPlease connect to the network to continue.</string>
+    <string name="message_tip_move_screen_trans">Move the icon to the area containing the text and you want to translate</string>
+    <string name="no_result">Oop! No result</string>
+
+
+</resources>

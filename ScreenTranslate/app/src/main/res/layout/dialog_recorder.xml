@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="40dp"
+        android:paddingTop="20dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/layout_relative"
+            android:layout_width="150dp"
+            android:layout_height="150dp">
+            <!--
+            <ProgressBar
+                android:id="@+id/progressbar_recorder"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:max="10000"
+                android:progressDrawable="@drawable/progressbar"
+                android:rotation="270" />
+
+            <FrameLayout
+                android:id="@+id/layout_off_recorder"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/border_oval"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/bt_stop_recorder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_mic_white_big" /> -->
+            <com.skyfishjy.library.RippleBackground
+                android:id="@+id/rippleBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rb_color="@color/colorBigMic"
+                app:rb_radius="14dp"
+                app:rb_rippleAmount="4"
+                app:rb_duration="3000"
+                app:rb_scale="6" >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/im_big_mic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="@dimen/default_padding_view"
+                    android:src="@drawable/ic_mic_white"
+                    android:background="@drawable/bg_circle_blue"
+                    android:layout_centerInParent="true" />
+            </com.skyfishjy.library.RippleBackground>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_text_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_relative"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:text="@string/recording" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_text_record"
+            android:layout_centerHorizontal="true"
+            android:text="@string/stop"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

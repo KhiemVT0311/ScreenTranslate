@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_audio">Lỗi ghi âm thanh</string>
+    <string name="error_client">Các lỗi phía khách hàng khác</string>
+    <string name="error_insufficient_permissions">Không đủ quyền</string>
+    <string name="network_timeout">Mạng hoạt động đã hết thời gian chờ</string>
+    <string name="fast_translator">Trình dịch nhanh</string>
+    <string name="app_name">Screen Trans</string>
+    <string name="screen_translator">Bộ dịch màn hình</string>
+    <string name="sample_text">Ví dụ</string>
+    <string name="copy_done">Đã sao chép!</string>
+    <string name="message_screen_trans_enable">Trình dịch màn hình đang được bật</string>
+    <string name="hint_input_text">Nhập văn bản của bạn vào đây</string>
+    <string name="no_text_detected">Không có văn bản nào được phát hiện</string>
+    <string name="screen_translator_on">Bộ dịch màn hình đang bật</string>
+    <string name="screen_shot">Chụp màn hình</string>
+    <string name="import_data">Đang nhập dữ liệu…</string>
+    <string name="shut_down">Tắt</string>
+    <string name="download_translation_desc">Bạn có muốn tải xuống gói ngôn ngữ dịch này để dịch ngoại tuyến không?</string>
+    <string name="title_download_offline_translate">Dịch ngay cả khi ngoại tuyến bằng cách tải xuống tệp dịch ngoại tuyến.</string>
+
+    <string name="download_audio_failed">Tải xuống thất bại :(</string>
+    <string name="download_data_success">Tải xuống dữ liệu thành công</string>
+    <string name="downloading_data">Đang tải…</string>
+    <string name="download_translation_title">Tải xuống gói ngôn ngữ dịch ngoại tuyến %s</string>
+    <string name="no">Không</string>
+    <string name="ok">Đồng ý</string>
+    <string name="open_app">Mở ứng dụng</string>
+    <string name="network_unconnected">Mất kết nối mạng</string>
+    <string name="no_internet">Không có kết nối. Vui lòng kết nối internet để tiếp tục!</string>
+    <string name="something_went_wrong">Đã xảy ra lỗi, vui lòng thử lại sau!</string>
+    <string name="translating">Đang dịch...</string>
+    <string name="screen_trans">Dịch màn hình</string>
+    <string name="translate_cap">Dịch</string>
+    <string name="translate">Dịch</string>
+    <string name="chat">Trò truyện</string>
+    <string name="premium">Cao cấp</string>
+    <string name="more">Thêm</string>
+    <string name="copy_successful">Copy thành công</string>
+    <string name="history">Lịch sử</string>
+    <string name="example">Ví dụ</string>
+    <string name="definition">Định nghĩa</string>
+    <string name="conversation">Hội thoại</string>
+    <string name="synonym_of">Từ đồng nghĩa của %s</string>
+    <string name="alter_definition">Bản dịch thay thế</string>
+    <string name="no_support_text_to_speech">Thiết bị của bạn không hỗ trợ đọc ngoại tuyến. Vui lòng kết nối Internet và thử lại!</string>
+    <string name="no_support_lang_code">Language not supported</string>
+    <string name="recording">Ghi âm</string>
+    <string name="stop">Dừng</string>
+    <string name="loading">Đang tải</string>
+    <string name="no_text">Hệ thống không hiểu bạn nói gì?</string>
+    <string name="select_language">Ngôn ngữ</string>
+    <string name="general_settings">Cài đặt chung</string>
+    <string name="text_terms_of_service">Điều khoản dịch vụ</string>
+    <string name="text_privacy_policy">Chính sách bảo mật</string>
+    <string name="text_contact_us">Liên hệ chúng tôi</string>
+    <string name="text_auto_text_to_speech">Tự động chuyển văn bản thành giọng nói</string>
+    <string name="system_busy">Hệ thống đang bận. Vui lòng thử lại sau</string>
+    <string name="feedback_screen_translate">Phản hồi ScreenTrans Android</string>
+    <string name="user_feedback">Phản hồi của người dùng</string>
+    <string name="error_feed_back">Lỗi! Không thể gửi phản hồi</string>
+    <string name="action_share">Chia sẻ</string>
+    <string name="share">Chia sẻ</string>
+    <string name="settings">Cài đặt</string>
+
+    <string name="projectID">Dịch màn hình</string>
+    <string name="error_no_internet_connect_continue">Không có kết nối mạng. \ nVui lòng kết nối với mạng để tiếp tục.</string>
+    <string name="detail">Chi tiết</string>
+    <string name="message_tip_move_screen_trans">Di chuyển biểu tượng đến khu vực chứa văn bản và bạn muốn dịch</string>
+    <string name="message_tip_click_screen_trans">Bấm vào biểu tượng để chuyển sang chế độ chọn vùng dịch</string>
+    <string name="no_result">Không có kết quả</string>
+
+
+</resources>

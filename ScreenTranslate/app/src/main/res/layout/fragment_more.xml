@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.eup.screentranslate.ui.screen.more.MoreViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.SettingActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/default_padding_view">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="8dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/select_language" />
+                <RelativeLayout
+                    android:id="@+id/layout_select_lang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:onClick="@{(v) -> viewmodel.onViewClick(v)}"
+                    android:padding="8dp">
+                    <TextView
+                        android:id="@+id/tv_language"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/im_arrow_select"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewmodel.currentLangName}" />
+                    <ImageView
+                        android:id="@+id/im_arrow_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_arrow_drop_down_brown"/>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:padding="8dp"
+                    android:text="@string/text_auto_text_to_speech" />
+                <Switch
+                    android:id="@+id/switch_textAutoSpeech"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="@{viewmodel.isAutoTextSpeech}"
+                    android:onClick="@{() -> viewmodel.onSwitchTextAutoSpeech()}"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/titleTerms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:onClick="@{(v) -> viewmodel.onViewClick(v)}"
+                android:padding="8dp"
+                android:text="@string/text_terms_of_service"/>
+
+            <TextView
+                android:id="@+id/titlePolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:onClick="@{(v) -> viewmodel.onViewClick(v)}"
+                android:padding="8dp"
+                android:text="@string/text_privacy_policy" />
+
+            <TextView
+                android:id="@+id/titleContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_arrow_right"
+                android:onClick="@{(v) -> viewmodel.onViewClick(v)}"
+                android:padding="8dp"
+                android:text="@string/text_contact_us" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

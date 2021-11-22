@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.eup.screentranslate.ui.screen.translate.TranslateViewModel" />
+
+        <variable
+            name="recordViewModel"
+            type="com.eup.screentranslate.ui.screen.dialog.record.RecordViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="846dp"
+            android:layout_weight="1"
+            android:background="@drawable/gradient_background_translate">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_langSource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/default_margin_widget"
+                        android:layout_toStartOf="@+id/ib_swap"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{() -> viewModel.chooseSourceLange(true)}"
+                        android:text="@{viewModel.langSource}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primaryDark" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_langDest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/default_padding_view"
+                        android:layout_toEndOf="@+id/ib_swap"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{() -> viewModel.chooseSourceLange(false)}"
+                        android:text="@{viewModel.langDest}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primaryDark" />
+
+                    <ImageButton
+                        android:id="@+id/ib_swap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{() -> viewModel.swapLang()}"
+                        android:rotation="90"
+                        android:src="@drawable/ic_swap" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginTop="@dimen/default_margin_widget"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:background="@color/primary"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_padding_view">
+
+                        <RelativeLayout
+                            android:id="@+id/relative_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true">
+
+                            <ImageButton
+                                android:id="@+id/imb_speakSource"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_alignParentStart="true"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{()-> viewModel.speakSource()}"
+                                android:src="@drawable/ic_speaker_black"
+                                app:tint="@color/colorIconTint" />
+
+                            <TextView
+                                android:id="@+id/tvSource"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/default_margin_widget"
+                                android:layout_marginTop="4dp"
+                                android:layout_toRightOf="@+id/imb_speakSource"
+                                android:text="@{viewModel.langSource}" />
+
+                            <ImageButton
+                                android:id="@+id/imb_clear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> viewModel.clearInputText()}"
+                                android:src="@drawable/ic_close_white"
+                                app:tint="@color/colorIconTint" />
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/edt_text_trans"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/relative_layout"
+                            android:background="@color/primary"
+                            android:gravity="top|left"
+                            android:hint="@string/hint_input_text"
+                            android:minLines="4"
+                            android:padding="@dimen/default_margin_item"
+                            android:text="@={viewModel.textInputTrans}"
+                            android:textSize="@dimen/default_editText_size" />
+
+                        <ImageButton
+                            android:id="@+id/imb_history"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/edt_text_trans"
+                            android:layout_marginTop="@dimen/default_margin_item"
+                            android:background="@android:color/transparent"
+                            android:onClick="@{() -> viewModel.showHistory()}"
+                            android:src="@drawable/ic_history"
+                            app:tint="@color/colorIconTint" />
+
+                        <ImageButton
+                            android:id="@+id/imb_mic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/edt_text_trans"
+                            android:layout_marginTop="@dimen/default_margin_item"
+                            android:layout_marginRight="@dimen/default_margin_widget"
+                            android:layout_toLeftOf="@+id/btn_translate"
+                            android:background="@android:color/transparent"
+                            android:onClick="@{() -> recordViewModel.onRecordSourceLang(false)}"
+                            android:src="@drawable/ic_mic" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_translate"
+                            style="@style/AccentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_below="@+id/edt_text_trans"
+                            android:layout_alignParentRight="true"
+                            android:onClick="@{() -> viewModel.translate()}"
+                            android:paddingStart="4dp"
+                            android:paddingEnd="4dp"
+                            android:text="@string/translate"
+                            android:textAllCaps="false" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_trans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginTop="@dimen/default_margin_widget"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/accent"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient_background_accent"
+                        android:padding="@dimen/default_padding_view">
+
+                        <RelativeLayout
+                            android:id="@+id/relative_layout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageButton
+                                android:id="@+id/imb_speakDest"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:layout_centerVertical="true"
+                                android:background="@android:color/transparent"
+                                android:onClick="@{() -> viewModel.speakDest() }"
+                                android:src="@drawable/ic_speaker_white" />
+
+                            <TextView
+                                android:id="@+id/tvDest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/default_margin_widget"
+                                android:layout_marginTop="@dimen/default_margin_item"
+                                android:layout_toRightOf="@+id/imb_speakDest"
+                                android:background="@android:color/transparent"
+                                android:text="@{viewModel.langDest}"
+                                android:textColor="@color/primary" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tvTrans"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/relative_layout2"
+                            android:layout_marginTop="@dimen/default_margin_widget"
+                            android:background="@android:color/transparent"
+                            android:minLines="3"
+                            android:text="@{ viewModel.resultTranslate }"
+                            android:textColor="@color/primary"
+                            android:textSize="@dimen/default_editText_size" />
+
+                        <ImageButton
+                            android:id="@+id/imb_copy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvTrans"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_accent_pressed"
+                            android:onClick="@{() -> viewModel.doCopy()}"
+                            android:src="@drawable/ic_white_copy" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintDownloadTranslate"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/dp8"
+                    android:layout_marginTop="@dimen/dp8"
+                    android:layout_marginEnd="@dimen/dp8">
+
+                    <ImageView
+                        android:id="@+id/img_thumb_download"
+                        android:layout_width="80dp"
+                        android:layout_height="0dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_download_offline_translate"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDownloadTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/title_download_offline_translate"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/img_thumb_download"
+                        app:layout_constraintTop_toTopOf="@id/img_thumb_download" />
+
+                    <ImageView
+                        android:id="@+id/imgDownloadTranslate"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingVertical="4dp"
+                        android:src="@drawable/ic_download"
+                        app:layout_constraintStart_toStartOf="@id/tvDownloadTitle"
+                        app:layout_constraintTop_toBottomOf="@id/tvDownloadTitle"
+                        app:tint="@color/blue_opacity" />
+
+                    <TextView
+                        android:id="@+id/tvLanguageDownload"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:textColor="@color/primaryText"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/imgDownloadTranslate"
+                        app:layout_constraintEnd_toEndOf="@id/tvDownloadTitle"
+                        app:layout_constraintStart_toEndOf="@id/imgDownloadTranslate"
+                        app:layout_constraintTop_toTopOf="@id/imgDownloadTranslate" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_padding_view">
+
+                        <TextView
+                            android:id="@+id/tv_titleHistory"
+                            style="@style/SmallDarKTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/history" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_History"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_titleHistory"
+                            android:padding="@dimen/default_padding_view"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:listHistoryData="@{viewModel.allHistoryTranslate}"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_history" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_definition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_padding_view">
+
+                        <TextView
+                            android:id="@+id/tv_titleDefinition"
+                            style="@style/SmallDarKTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/definition" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_definition"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_titleDefinition"
+                            android:padding="@dimen/default_padding_view"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_history" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_dict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/default_padding_view">
+
+                        <TextView
+                            android:id="@+id/tv_titleDict"
+                            style="@style/SmallDarKTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/alter_definition" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_dict"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_titleDict"
+                            android:padding="@dimen/default_padding_view"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/item_history" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_example"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/default_padding_view">
+
+                        <TextView
+                            android:id="@+id/tv_titleExample"
+                            style="@style/SmallDarKTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_example"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_titleExample"
+                            android:padding="@dimen/default_padding_view"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_example" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/view_synset"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/padding_translate_fragment"
+                    android:layout_marginBottom="@dimen/default_margin_widget"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/default_size_radiusCorner">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/default_padding_view">
+
+                        <TextView
+                            android:id="@+id/tv_titleSynset"
+                            style="@style/SmallDarKTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example" />
+
+                        <TextView
+                            android:id="@+id/tvSynsets"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_titleSynset"
+                            android:layout_marginTop="@dimen/default_margin_widget"
+                            android:paddingLeft="@dimen/default_padding_view" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/layout_banner"
+            layout="@layout/layout_banner" />
+
+    </LinearLayout>
+</layout>

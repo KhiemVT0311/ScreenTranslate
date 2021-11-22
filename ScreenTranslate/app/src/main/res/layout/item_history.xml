@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.eup.screentranslate.ui.screen.translate.TranslateViewModel" />
+        <variable
+            name="history"
+            type="com.eup.screentranslate.model.History" />
+    </data>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.onItemHistoryClick(history)}">
+
+
+        <ImageButton
+            android:id="@+id/imb_item_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_history"
+            android:background="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imb_item_history"
+            android:layout_marginLeft="@dimen/default_padding_view"
+            android:layout_centerVertical="true"
+            android:text="@{history.text}"/>
+
+        <ImageButton
+            android:id="@+id/imb_deleteHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_close_black"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/default_padding_view"
+            android:onClick="@{() -> viewModel.onDeleteHistoryClick(history)}"/>
+
+    </RelativeLayout>
+</layout>

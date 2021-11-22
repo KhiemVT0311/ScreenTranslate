@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:apps="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        android:layout_marginEnd="12dp"-->
+    <!--        app:cardCornerRadius="8dp">-->
+
+    <RelativeLayout
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/bg_card_top_bottom"
+        android:backgroundTint="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_top"
+            android:backgroundTint="#3367D6">
+
+            <TextView
+                android:id="@+id/tvSrc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/btnSwap"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center"
+                android:text="@string/japan"
+                android:drawableTint="@android:color/white"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp14"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnSwap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:padding="8dp"
+                android:tint="@android:color/white"
+                android:src="@drawable/ic_swap_horizontal"
+                app:tint="@android:color/white" />
+
+            <TextView
+                android:id="@+id/tvDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/btnSwap"
+                android:drawableEnd="@drawable/ic_arrow_drop_down"
+                android:gravity="center"
+                android:drawableTint="@android:color/white"
+                android:text="@string/vietnam"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp14"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/border"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@id/layout_language"
+            android:background="#E8E9F0" />
+
+        <TextView
+            android:id="@+id/btn_speak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/border"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/btn_text_to_speech"
+            android:drawablePadding="@dimen/dp8"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp8"
+            android:text="@string/japan"
+            android:textSize="@dimen/sp14" />
+
+        <ImageButton
+            android:id="@+id/btn_clear"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/border"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/dp8"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_close_grey" />
+
+        <com.eup.screentranslate.view.MaxHeightNestedScrollView
+            android:id="@+id/nested_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_speak"
+            apps:maxHeight="300dp">
+
+            <FrameLayout
+                android:id="@+id/frame_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp8">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/inputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textSize="@dimen/sp16"
+                    android:visibility="gone" />
+
+                <com.eup.screentranslate.view.FuriganaView
+                    android:id="@+id/fv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp4"
+                    android:lineSpacingExtra="8dp"
+                    android:textColor="#CF000000"
+                    android:textSize="@dimen/sp16"
+                    app:furiganaSize="@dimen/sp10"
+                    app:romajiSize="@dimen/sp10" />
+            </FrameLayout>
+        </com.eup.screentranslate.view.MaxHeightNestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nested_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginBottom="2dp"
+            android:text="@string/translate"
+            android:textColor="#3367D6"
+            android:textSize="@dimen/sp13"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/border2"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:layout_below="@id/tv_translate"
+            android:layout_marginTop="@dimen/dp4"
+            android:background="#E8E9F0" />
+
+        <TextView
+            android:id="@+id/btn_speak_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/border2"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/btn_text_to_speech"
+            android:drawablePadding="@dimen/dp8"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp8"
+            android:text="@string/vietnam"
+            android:textSize="@dimen/sp14" />
+
+        <ImageButton
+            android:id="@+id/btn_copy"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/border2"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/dp8"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_content_copy" />
+
+        <ProgressBar
+            android:id="@+id/pb_mean"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_below="@id/btn_speak_mean"
+            android:layout_centerHorizontal="true" />
+
+        <com.eup.screentranslate.view.MaxHeightNestedScrollView
+            android:id="@+id/nested_mean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_speak_mean"
+            apps:maxHeight="300dp">
+
+            <com.eup.screentranslate.view.FuriganaView
+                android:id="@+id/fv_mean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp8"
+                android:layout_marginTop="@dimen/dp4"
+                android:layout_marginBottom="@dimen/dp4"
+                android:lineSpacingExtra="8dp"
+                android:textColor="#CF000000"
+                android:textSize="@dimen/sp16"
+                app:furiganaSize="@dimen/sp10"
+                app:romajiSize="@dimen/sp10" />
+        </com.eup.screentranslate.view.MaxHeightNestedScrollView>
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nested_mean"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp8"
+            android:layout_marginBottom="2dp"
+            android:text="@string/detail"
+            android:textColor="#3367D6"
+            android:textSize="@dimen/sp13" />
+    </RelativeLayout>
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:background="@drawable/bg_circle_close"
+        android:padding="@dimen/dp4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_close"
+        app:tint="@android:color/white" />
+
+</FrameLayout>

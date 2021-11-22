@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.eup.screentranslate.ui.screen.conversation.ConversationViewModel" />
+        <variable
+            name="recordModel"
+            type="com.eup.screentranslate.ui.screen.dialog.record.RecordViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/tv_titleConversation"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:text="@string/conversation"
+            android:background="@color/color_nav_bottom"
+            style="@style/DarkTitle"
+            android:textColor="@color/primary"
+            android:gravity="center"
+            android:padding="@dimen/default_padding_view" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_conversation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_titleConversation"
+            android:layout_above="@+id/line_horizontal"
+            android:padding="@dimen/default_padding_view"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_conversation_left"/>
+
+        <TextView
+            android:id="@+id/line_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/ll_mic"
+            android:background="#8a837d" />
+
+        <LinearLayout
+            android:id="@+id/ll_mic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/default_margin_widget">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imb_micSource"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_circle_orange"
+                    android:src="@drawable/ic_mic_stroke"
+                    app:tint="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="@{() -> recordModel.onRecordSourceLang(true)}"/>
+                <TextView
+                    android:id="@+id/tv_chooseSource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_padding_view"
+                    android:text="@{viewModel.langSource}"
+                    android:textAlignment="center"
+                    android:drawableRight="@drawable/ic_arrow_drop_down_orange"
+                    android:onClick="@{() -> viewModel.showChooseSourceLange(true)}"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/imb_micDest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_circle_brown"
+                    android:src="@drawable/ic_mic_stroke"
+                    app:tint="@color/white"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="@{() -> recordModel.onRecordDestLang(true)}"/>
+                <TextView
+                    android:id="@+id/tv_chooseDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_padding_view"
+                    android:text="@{viewModel.langDest}"
+                    android:textAlignment="center"
+                    android:drawableRight="@drawable/ic_arrow_drop_down_brown"
+                    android:onClick="@{() -> viewModel.showChooseSourceLange(false)}"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

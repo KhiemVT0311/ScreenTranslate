@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colors for the Hover menu itself -->
+    <color name="hover_navigator_color">#3b3b3b</color>
+    <color name="hover_shade_color">#CC000000</color>
+
+    <!-- Colors for drill-down menus that can appear in Hover's content area -->
+    <color name="hover_content_menu_divider_color">#CCCCCC</color>
+    <color name="hover_content_menu_title_color">#AAAAAA</color>
+    <color name="hover_content_menu_item_title_color">#666666</color>
+
+    <color name="textHighlight">#3367D6</color>
+    <color name="secondaryText">#565656</color>
+    <color name="colorAccent">#32B4E6</color>
+    <color name="gnt_red">#FF0000</color>
+    <color name="primaryText">#CF000000</color>
+    <color name="blue_opacity">#803367D6</color>
+    <color name="color_background">#E8E9F0</color>
+    <color name="color_background_card_view">#FFFFFF</color>
+    <color name="spinner_color">#DCD5D5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="fake_white">#e4f7f3</color>
+    <color name="color_scanning">#FB3F1A</color>
+    <color name="color_rect_text">#FFC300</color>
+    <color name="color_fake_transparent">#AA000000</color>
+    <color name="color_selected_area">#ECEB24</color>
+    <color name="color_mark_text">#209BE9</color>
+    <color name="color_nav_bottom">#070607</color>
+    <color name="color_scan">#ECEB24</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="gray_dark">#808080</color>
+    <color name="primary">@color/white</color>
+    <color name="primaryDark">#4a4b59</color>
+    <color name="accent">#F7A033</color>
+    <color name="fake_accent">#ffc680</color>
+    <color name="windowBackground">#ffffff</color>
+    <color name="defaultBackground">#89f7fe</color>
+
+    <color name="colorIconTint">#CC000000</color>
+    <color name="colorBigMic">#3eb3f7</color>
+</resources>
