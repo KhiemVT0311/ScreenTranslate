@@ -194,14 +194,14 @@ public class GetTranslateHelper {
             options = new TranslatorOptions.Builder().
                     setSourceLanguage("").
                     setTargetLanguage("").build();
-        } else if (TranslateLanguage.fromLanguageTag(tl) != null && TranslateLanguage.fromLanguageTag(tl) == null) {
+        } else if (TranslateLanguage.fromLanguageTag(tl) != null && TranslateLanguage.fromLanguageTag(tl) != null) {
             options = new TranslatorOptions.Builder().
                     setSourceLanguage(TranslateLanguage.fromLanguageTag(sl)).
                     setTargetLanguage(TranslateLanguage.fromLanguageTag(tl)).build();
-        } else if (options == null) {
+        } else {
             options = new TranslatorOptions.Builder().
                     setSourceLanguage(TranslateLanguage.fromLanguageTag("en")).
-                    setTargetLanguage("vi").build();
+                    setTargetLanguage("zh").build();
         }
         translateModel = com.google.mlkit.nl.translate.Translation.getClient(options);
         return true;
@@ -253,7 +253,6 @@ public class GetTranslateHelper {
     }
 
     public static void downloadModel(onDownloadModelCallback onDownloadFinished) {
-        if (null!=translateModel) {
             translateModel.downloadModelIfNeeded().addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(@NonNull Void unused) {
@@ -265,7 +264,6 @@ public class GetTranslateHelper {
                     onDownloadFinished.onDownloadFinished(false);
                 }
             });
-        }
     }
 
     public interface onTranslateOfflineCallback {
